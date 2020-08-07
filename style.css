@@ -1,0 +1,41 @@
+body{
+	background-color: rgb(55,150,244);
+}
+
+@font-face {
+    font-family: 'a Alloy Ink';
+    src: url('../aAlloyInk.woff2') format('woff2');
+    src: url('../aAlloyInk.woff') format('woff');
+}
+
+.linkinput{
+		width: 30vw;
+		height: 23px;
+}
+.buttonboi{
+	width:15vw;
+	height:4vh;
+
+}
+.content-wrapper{
+	text-align:center;
+}
+
+h1{
+	font-family: 'a Alloy Ink';
+	font-size:10vh;
+	color:yellow;
+}
+
+@media screen and (max-width: 700px){
+	h1{
+		font-size:15vw;
+	}
+	.buttonboi{
+		height:25px;
+		width:150px;
+	}
+	.linkinput{
+		width:50vw;
+	}
+}
