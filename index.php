@@ -138,6 +138,7 @@ function run_shortener(){
 	<body>
 		<div class="content-wrapper">
 			<h1>Smal.me</h1>
+			<h2>Note: All links must have an http/https prefix.</h2>
 			<form action='index.php' method='POST'>
 				<div style="padding-bottom: 6vh">
 					<input type="text" name="linkinput" class="linkinput" id="linkinput" placeholder="Link to shorten:">
