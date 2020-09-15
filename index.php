@@ -27,6 +27,7 @@ function get_real_link_given_short_link($shortened_link, $conn){
 	else {
 		return $result->fetch_row()[0];
 	}
+
 }
 ///////////////////////////////////////////////////////////////////////////////
 //	Request handling
@@ -121,7 +122,7 @@ function run_shortener(){
 		//	Plant link in database
 		add_link_to_database($linkinput,$shortened, $conn);
 		//	Echo link
-		echo $shortened;
+		echo "http://".$shortened;
 	}
 	$conn->close();
 }
