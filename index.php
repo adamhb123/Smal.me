@@ -1,20 +1,13 @@
 <?php
 
-function console_log($data) {
-    $output = $data;
-    if (is_array($output))
-        $output = implode(',', $output);
-
-    echo "<script>console.log('Debug Objects: " . $output . "' );</script>";
-}
 function get_db_conn(){
 	$servername = "localhost";
 	$dbname = "slinky";
-	$port = 3307;
+	$port = 3306;
 	$username = "root";
-  $pfilestr = "C:\\xampp-resources\\sql-password.txt";
-  $pfile = fopen($pfilestr, "r") or die("DB load failure!");
-	$password = fgets($pfile);
+	$pfilestr = "../sql-password.txt";
+	$pfile = fopen($pfilestr, "r") or die("DB load failure!");
+	$password = trim(fgets($pfile));
 	$conn = new MySQLi($servername, $username, $password, $dbname , $port);
 	if($conn->connect_error){
 		echo "Sorry, we are experiencing problems! Try later!";
@@ -43,7 +36,8 @@ if ($request !== "/index.php" && $request !== "/"){
 	$conn = get_db_conn();
 	$link = get_real_link_given_short_link("smal.me$request",$conn);
 	if ($link !== FALSE) {
-		echo "<script>console.log(\"$link\"); window.open(\"$link\");</script>";
+		echo "<script>window.open('$link');</script>";
+		//header('Location: '.strval($link),true);
 		exit();
 	}
 	else{
